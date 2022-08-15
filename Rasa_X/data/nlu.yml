@@ -1,0 +1,197 @@
+version: "2.0"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - Xin Chào
+    - hey there
+    - Chào đấy
+    - chào buổi sáng
+    - chào buổi chiều
+    - chào
+    - chào buổi tối
+    - e
+    - ê
+    - e đằng đó
+    - Mình có vài câu hỏi
+    - Bạn có thể giúp mình được không ?
+    - có ai ở đây không
+    - tôi cần trợ giúp
+    - Xin chào
+- intent: goodbye
+  examples: |
+    - Tạm Biêt
+    - good by
+    - tạm biệt em
+    - chào tạm biệt
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - có
+    - co
+    - c
+    - đúng vậy
+    - of course
+    - chuẩn rồi
+    - chuẩn luôn
+    - đúng rồi
+    - đúng
+- intent: deny
+  examples: |
+    - no
+    - n
+    - Không phải
+    - không
+    - không đúng
+    - chả đúng
+    - sai
+    - sai bét
+- intent: mood_great
+  examples: |
+    - Thật vi diệu
+    - bạn giỏi quá
+    - quá đỉnh luôn
+    - thật tuyệt vởi
+    - chuẩn thứ tôi cần rồi
+    - làm tốt lắm
+    - chuẩn đét
+- intent: mood_unhappy
+  examples: |
+    - Tôi buồn
+    - nay trán quá
+    - buồn
+    - rẩt buồn
+    - sad
+    - so sad
+    - nay cảm thấy không vui
+    - một ngày tồi tệ
+    - Buồn vô cùng
+- intent: bot_challenge
+  examples: |
+    - bạn là bot hả
+    - bạn là người hả
+    - đây có phải bot không
+- intent: bot_name
+  examples: |
+    - Bạn tên là gì
+    - Bot có tên không
+    - tên bot là gì
+    - what your name?
+    - your name
+    - tên là gì ?
+- intent: bot_func
+  examples: |
+    - bạn có chức năng gì ?
+    - bạn làm được gì ?
+    - bạn giúp được gì cho tôi ?
+    - Bạn có thể làm được gì?
+    - chức năng của bạn là gì ?
+    - Bạn có những chức năng gì?
+- intent: bot_thanks
+  examples: |
+    - Thanks
+    - Thank you
+    - Cảm ơn nhiều
+    - ths
+- intent: give_name
+  examples: |
+    - Mình  là [Toàn Thắng](cust_name)
+    - Mình  là [Thành Lộc](cust_name)
+    - Tôi là [Hằng](cust_name)
+    - Tôi là [Bích Ngọc](cust_name)
+    - Tôi là [Lam](cust_name)
+    - Chị  là [Hương](cust_name)
+    - Chị  là [Thanh Hương](cust_name)
+    - [Vân Nguyễn](cust_name)
+    - [Hùng](cust_name)
+    - [Tuấn Hoàng](cust_name)
+    - [Xuân Tuyền](cust_name)
+    - Tôi Tên là [Đức Giang](cust_name)
+    - bác Tên là [Anh Chung](cust_name)
+    - Tôi tên [Chung](cust_name)
+    - Cô là [Xuân](cust_name)
+    - Chị  tên [Trang](cust_name)
+    - Cô  tên [Loan](cust_name)
+    - Chú tên là [Quyết](cust_name)
+    - Em tên là [Định](cust_name)
+    - mình  là [Huyền](cust_name)
+    - mình  là [Hường](cust_name)
+    - em  là [Lê](cust_name)
+    - mình  là [Chinh](cust_name)
+    - anh  là [Bình](cust_name)
+    - mình  là [Ngọc Ly](cust_name)
+    - em  là [Huệ](cust_name)
+    - em  là [Kim Dung](cust_name)
+    - Cháu  là [Ngọc Lữ](cust_name)
+    - Cháu  là [Xuân Sang](cust_name)
+    - Cháu  là [Ngọc Mai](cust_name)
+    - Bác  là [Thanh Nhàn](cust_name)
+    - Con  là [Bích Nhàn](cust_name)
+    - Cô  là [Thành Lộc](cust_name)
+    - Anh  là [Xuân Đông](cust_name)
+    - Anh là [Hữu Huy](cust_name)
+- intent: point_list
+  examples: |
+    - Mã Sinh Viên : [2019606771](student_id)
+    - Mã Sinh Viên:[2022624772](student_id)
+    - [2019301987](student_id)
+    - Mã Sinh Viên của Tôi là [2018600424](student_id)
+    - Mã Sinh Viên [2019606771](student_id)
+    - Tôi có Mã Sinh Viên là [2017605542](student_id)
+    - Mã sinh Viên của mình là : [2021706515](student_id)
+    - [2030601491](student_id) là mã sinh viên
+    - [2019604119](student_id)
+    - [2019606088](student_id)
+    - [2019605710](student_id)
+    - [2019602004](student_id)
+    - [2019606771](student_id)
+    - [2019603784](student_id)
+    - [2019605690](student_id)
+- intent: Set_Time_point_list
+  examples: |
+    - Băt đầu [13:24](timeStart) Kết thúc [14:55](timeEnd)
+    - [3:01](timeStart) -  [3:45](timeEnd)
+    - Thời Gian Bắt đầu là [20:3](timeStart)  thời gian kết thúc là [21:33](timeEnd)
+    - Start [3:3](timeStart) End [4:6](timeEnd)
+    - [13:07](timeStart)-[4:15](timeEnd)
+    - Thời Gian [10:33](timeStart) [11:5](timeEnd)
+- intent: Time_point_list
+  examples: |
+    - Đặt Thời Gian điểm danh
+    - thời gian điểm danh
+    - Cài đặt thời gian điểm danh
+    - Bắt đầu điểm danh
+    - điểm danh
+- intent: cancel_time
+  examples: |
+    - Huỷ thời gian điểm danh
+    - huỷ điểm danh
+    - đặt lại thời gian điểm danh
+    - đặt lại diểm danh
+    - xoá điểm danh
+    - đặt lại thời gian
+- intent: Guide_point_list
+  examples: |
+    - Tôi không Biết điểm danh
+    - Điểm danh như thế nào
+    - làm sao để diểm danh
+    - hướng đẫn điểm danh
+    - cách điểm danh
+    - làm thế nào để điểm danh
+    - Mình muốn điểm danh
+- regex: student_id
+  examples: |
+    - \d{10}

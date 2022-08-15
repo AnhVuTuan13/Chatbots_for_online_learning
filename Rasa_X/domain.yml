@@ -1,0 +1,109 @@
+version: '2.0'
+config:
+  store_entities_as_slots: true
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- greet:
+    use_entities: true
+- affirm:
+    use_entities: true
+- deny:
+    use_entities: true
+- mood_great:
+    use_entities: true
+- mood_unhappy:
+    use_entities: true
+- bot_challenge:
+    use_entities: true
+- bot_name:
+    use_entities: true
+- bot_func:
+    use_entities: true
+- bot_thanks:
+    use_entities: true
+- give_name:
+    use_entities: true
+- goodbye:
+    use_entities: []
+- point_list:
+    use_entities: true
+- Set_Time_point_list:
+    use_entities: true
+- Time_point_list:
+    use_entities: true
+- cancel_time:
+    use_entities: true
+- Guide_point_list:
+    use_entities: true
+entities:
+- cust_name
+- student_id
+- timeStart
+- timeEnd
+slots:
+  cust_name:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+responses:
+  utter_name:
+  - text: Tên mình là chatbot Rasa rất vui gặp bạn !
+  utter_greet_with_name:
+  - text: Kính chào {cust_name}. Tôi có thể giúp gì được cho {cust_name} ạ?
+  utter_cheer_up:
+  - image: https://i.imgur.com/nGF1K8f.jpg
+    text: Cố lên nha :) !!!
+  utter_did_that_help:
+  - text: Mình có thể giúp gì cho bạn
+  utter_happy:
+  - text: Bạn vui là tôi vui rồi!
+  utter_goodbye:
+  - text: Tạm Biệt!
+  - text: Bye
+  - text: Cảm ơn đã nhắn tin với mình !! Bye!
+  - text: Good bye
+  utter_iamabot:
+  - text: Mình là chatbot!!
+  utter_thanks:
+  - text: Không Có Gì ạ !
+  - text: 'Đó là công việc của Mình '
+  utter_func_list:
+  - image: https://thumbs.dreamstime.com/b/teddy-sorry-1744017.jpg
+    text: 'Em có thể làm rất nhiều thứ. Nhưng do em chưa được hoàn thiện nền chưa làm được gì :) '
+  utter_unhappy:
+  - text: Mọi Chuyện buồn sẽ qua thôi !
+  - text: 'Cố  Gắng lên '
+  utter_greet:
+  - text: Xin Chào! Bạn có thể vui lòng cho biết tên để tiện xưng hô được không ah?
+  utter_Guide_point_list:
+  - text: 'Để Điểm danh bạn Vui Lòng cho chúng tôi biết Mã Sinh Viên. Vidu: Mã Sinh Viên : 2019403784 .'
+  utter_Time_point_list:
+  - text: 'Để Điểm danh bạn Vui Lòng cài đặt Thời gian điểm danh. Vidu: 3:01 -  3:45  (Giờ:Phút) '
+  utter_cancel_time:
+  - text: '- Bạn có chắc chắn muôn huỷ thời gian điểm danh ?'
+  utter_deny_cancel_time:
+  - text: '- Thời Gian Chưa được đặt lại!'
+actions:
+- utter_name
+- utter_greet_with_name
+- utter_cheer_up
+- utter_did_that_help
+- utter_happy
+- utter_goodbye
+- utter_iamabot
+- utter_thanks
+- utter_func_list
+- utter_unhappy
+- utter_greet
+- utter_Guide_point_list
+- utter_Time_point_list
+- utter_cancel_time
+- utter_deny_cancel_time
+- action_cancel_time
+- action_Get_Time_point_List
+- action_Point_List
+forms: {}
+e2e_actions: []
