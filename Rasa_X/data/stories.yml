@@ -4,8 +4,6 @@ stories:
   steps:
   - intent: greet
   - action: utter_greet
-  - intent: give_name
-  - action: utter_greet_with_name
   - intent: bot_name
   - action: utter_name
   - intent: bot_func
@@ -16,20 +14,13 @@ stories:
   steps:
   - intent: greet
   - action: utter_greet
-  - intent: give_name
-  - action: utter_greet_with_name
   - intent: goodbye
   - action: utter_goodbye
-- story: Dua_Ra_Ten_Khach
-  steps:
-  - intent: give_name
-  - action: utter_greet_with_name
+
 - story: chao_ten_chao
   steps:
   - intent: greet
   - action: utter_greet
-  - intent: give_name
-  - action: utter_greet_with_name
   - intent: bot_name
   - action: utter_name
   - intent: goodbye
@@ -38,8 +29,6 @@ stories:
   steps:
   - intent: greet
   - action: utter_greet
-  - intent: give_name
-  - action: utter_greet_with_name
   - intent: bot_func
   - action: utter_func_list
   - intent: goodbye
@@ -89,3 +78,22 @@ stories:
     - intent: deny
     - action: utter_deny_cancel_time
 
+- story: Chaohoi_TinhDiemMon
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: Calculate_Score
+    - action: utter_Calculate_Score
+
+- story: Chaohoi_ThongTinMonHoc
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: C_Score
+    - action: utter_C_Score
+    - intent: Course_Information
+    - action: action_Course_Information
+- story: Suport_MonHoc
+  steps:
+    - intent: Subject_Suport
+    - action: action_Subject_Suport

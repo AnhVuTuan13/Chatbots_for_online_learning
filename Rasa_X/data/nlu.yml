@@ -106,43 +106,6 @@ nlu:
     - Thank you
     - Cảm ơn nhiều
     - ths
-- intent: give_name
-  examples: |
-    - Mình  là [Toàn Thắng](cust_name)
-    - Mình  là [Thành Lộc](cust_name)
-    - Tôi là [Hằng](cust_name)
-    - Tôi là [Bích Ngọc](cust_name)
-    - Tôi là [Lam](cust_name)
-    - Chị  là [Hương](cust_name)
-    - Chị  là [Thanh Hương](cust_name)
-    - [Vân Nguyễn](cust_name)
-    - [Hùng](cust_name)
-    - [Tuấn Hoàng](cust_name)
-    - [Xuân Tuyền](cust_name)
-    - Tôi Tên là [Đức Giang](cust_name)
-    - bác Tên là [Anh Chung](cust_name)
-    - Tôi tên [Chung](cust_name)
-    - Cô là [Xuân](cust_name)
-    - Chị  tên [Trang](cust_name)
-    - Cô  tên [Loan](cust_name)
-    - Chú tên là [Quyết](cust_name)
-    - Em tên là [Định](cust_name)
-    - mình  là [Huyền](cust_name)
-    - mình  là [Hường](cust_name)
-    - em  là [Lê](cust_name)
-    - mình  là [Chinh](cust_name)
-    - anh  là [Bình](cust_name)
-    - mình  là [Ngọc Ly](cust_name)
-    - em  là [Huệ](cust_name)
-    - em  là [Kim Dung](cust_name)
-    - Cháu  là [Ngọc Lữ](cust_name)
-    - Cháu  là [Xuân Sang](cust_name)
-    - Cháu  là [Ngọc Mai](cust_name)
-    - Bác  là [Thanh Nhàn](cust_name)
-    - Con  là [Bích Nhàn](cust_name)
-    - Cô  là [Thành Lộc](cust_name)
-    - Anh  là [Xuân Đông](cust_name)
-    - Anh là [Hữu Huy](cust_name)
 - intent: point_list
   examples: |
     - Mã Sinh Viên : [2019606771](student_id)
@@ -192,6 +155,214 @@ nlu:
     - cách điểm danh
     - làm thế nào để điểm danh
     - Mình muốn điểm danh
+- intent: Calculate_Score
+  examples: |
+    - Cách tính điểm môn học
+    - Tính điểm môn Học
+    - Tính điểm môn học như thế nào
+    - làm sao để tính điểm môn học
+    - tính điểm môn như thế nào
+- intent: Course_Information
+  examples: |
+    - Xem thông tin môn: [trí tuệ nhân tạo](subject_name)
+    - Xem thông tin môn: [Tiếng Anh Công nghệ thông tin cơ bản 2](subject_name)
+    - Xem thông tin môn: [Chủ nghĩa xã hội khoa học ](subject_name)
+    - Xem thông tin môn: [ Pháp luật đại cương ](subject_name)
+    - Xem thông tin môn: [Tiếng Trung cơ bản 2](subject_name)
+    - Xem thông tin môn: [Giải tích](subject_name)
+    - Xem thông tin môn: [Nhập môn về kỹ thuật](subject_name)
+    - Xem thông tin môn: [Đá cầu 1](subject_name)
+    - thông tin môn: [Pháp luật đại cương](subject_name)
+    - thông tin môn: [Toán rời rạc](subject_name)
+    - thông tin môn: [Thiết kế Web](subject_name)
+    - thông tin môn: [Tennis 1](subject_name)
+    - thông tin môn: [Tư tưởng Hồ Chí Minh](subject_name)
+    - thông tin môn: [Cấu trúc dữ liệu và giải thuật](subject_name)
+    - thông tin môn: [Hệ quản trị cơ sở dữ liệu](subject_name)
+    - thông tin môn: [Lập trình .NET](subject_name)
+    - thông tin môn: [Đồ họa máy tính](subject_name)
+    - thông tin môn: [An toàn và bảo mật thông tin](subject_name)
+    - thông tin môn: [Thiết kế phần mềm](subject_name)
+    - thông tin môn: [Tiếng Nhật](subject_name)
+    - thông tin môn: [Tích hợp hệ thống phần mềm](subject_name)
+    - thông tin môn: [Lập trình web bằng PHP](subject_name)
+    - Xem thông tin môn: [Thực tập doanh nghiệp](subject_name)
+    - Xem thông tin môn: [Thiết kế phần mềm](subject_name)
+    - Xem thông tin môn: [Tối ưu hóap](subject_name)
+    - Xem thông tin môn: [Đồ họa máy tính](subject_name)
+    - thông tin môn: [Lập trình Java](subject_name)
+    - thông tin môn: [Pencak Silat 2](subject_name)
+    - Xem thông tin môn: [Bóng chuyền 2](subject_name)
+    - thông tin môn: [Nguyên lý hệ điều hành](subject_name)
+    - thông tin môn: [Aerobic 1](subject_name)
+    - Xem thông tin môn: [Lịch sử Đảng Cộng sản Việt Nam](subject_name)
+    - Xem thông tin môn: [Pháp luật đại cương](subject_name)
+    - Xem thông tin môn: [Công tác quốc phòng, an ninh](subject_name)
+    - Xem thông tin môn: [Bóng đá 2](subject_name)
+    - Xem thông tin môn: [Kiến trúc máy tính](subject_name)
+    - Xem thông tin môn: [Tiếng Trung cơ bản 3](subject_name)
+    - Xem thông tin môn: [Bơi 1](subject_name)
+    - Xem thông tin môn: [Tennis 1](subject_name)
+    - Xem thông tin môn: [Phân tích và đặc tả yêu cầu phần mềm](subject_name)
+    - Xem thông tin môn: [Một số công nghệ phát triển phần mềm](subject_name)
+    - thông tin môn: [Công cụ phát triển phần mềm](subject_name)
+    - Xem thông tin môn: [Phát triển ứng dụng trên thiết bị di động](subject_name)
+    - Xem thông tin môn: [Xác suất thống kê](subject_name)
+- intent: Subject_Suport
+  examples: |
+    - Tôi đã học môn: [Nhập môn về kỹ thuật](subject_name)
+    - Đã học môn: [Đá cầu 1](subject_name)
+    - Tôi đã học môn: [Lập Trình Java](subject_name)
+    - Tớ đã học môn: [Toán rời rạc](subject_name)
+    - Minh đã học môn: [Thiết kế Web](subject_name)
+    - Tôi đã học môn: [Tennis 1](subject_name)
+    - Tôi đã học môn [Tư tưởng Hồ Chí Minh](subject_name)
+    - Minh đã học môn [Cấu trúc dữ liệu và giải thuật](subject_name)
+    - Minh đã học môn [Hệ quản trị cơ sở dữ liệu](subject_name)
+    - Tớ đã học môn [Lập trình .NET](subject_name)
+    - Tớ đã học môn [Đồ họa máy tính](subject_name)
+    - Tớ đã học môn [An toàn và bảo mật thông tin](subject_name)
+    - Tớ đã học môn: [Thiết kế phần mềm](subject_name)
+    - Minh đã học môn: [Tiếng Nhật](subject_name)
+    - Đã học môn: [Tích hợp hệ thống phần mềm](subject_name)
+    - Đã học môn: [Lập trình web bằng PHP](subject_name)
+    - Đã học môn: [Thực tập doanh nghiệp](subject_name)
+    - Đã học môn: [Thiết kế phần mềm](subject_name)
+    - Minh đã học môn: [Tối ưu hóap](subject_name)
+    - Minh đã học môn: [Đồ họa máy tính](subject_name)
+    - Minh đã học môn: [Lập trình Java](subject_name)
+    - Minh đã học môn: [Pencak Silat 2](subject_name)
+    - đã học môn [Một số công nghệ phát triển phần mềm](subject_name)
+    - đã học môn [Bóng chuyền 2](subject_name)
+    - đã học môn: [Nguyên lý hệ điều hành](subject_name)
+    - đã học môn: [Aerobic 1](subject_name)
+    - đã học môn: [Lịch sử Đảng Cộng sản Việt Nam](subject_name)
+    - đã học môn: [Pháp luật đại cương](subject_name)
+    - Minh đã học môn: [Công tác quốc phòng, an ninh](subject_name)
+    - Minh đã học môn: [Bóng đá 2](subject_name)
+    - Minh đã học môn: [Kiến trúc máy tính](subject_name)
+    - Minh đã học môn: [Tiếng Trung cơ bản 3](subject_name)
+    - Minh đã học môn: [Bơi 1](subject_name)
+    - Minh đã học môn: [Tennis 1](subject_name)
+    - Minh đã học môn: [Phân tích và đặc tả yêu cầu phần mềm](subject_name)
+    - Minh đã học môn: [Một số công nghệ phát triển phần mềm](subject_name)
+    - Minh đã học môn: [Công cụ phát triển phần mềm](subject_name)
+    - Minh đã học : [Phát triển ứng dụng trên thiết bị di động](subject_name)
+- intent: C_Score
+  examples: |
+    - làm Sao để xem thông tin môn học
+    - xem thông tin môn học
+    - cách xem thông tin môn học
 - regex: student_id
   examples: |
     - \d{10}
+- lookup: subject_name
+  examples: |
+    - Tiếng Anh Công nghệ thông tin cơ bản 1
+    - Triết học Mác-Lênin
+    - Kinh tế chính trị Mác-Lênin
+    - Giải tích
+    - Công tác quốc phòng, an ninh
+    - Đường lối quân sự của Đảng
+    - QS chung và CTKT bắn súng TLAK (CKC)
+    - Nhập môn về kỹ thuật
+    - Tiếng Trung cơ bản 1
+    - Tiếng Hàn cơ bản 1
+    - Tiếng Nhật cơ bản 1
+    - Bóng bàn 1
+    - Bóng bàn 2
+    - Bóng đá 1
+    - Bóng đá 2
+    - Đá cầu 1
+    - Đá cầu 2
+    - Cầu mây 1
+    - Cầu mây 2
+    - Tiếng Anh công nghệ thông tin cơ bản 2
+    - Chủ nghĩa xã hội khoa học
+    - Pháp luật đại cương
+    - Nhập môn lập trình máy tính
+    - Đại số tuyến tính
+    - Tiếng Trung cơ bản 2
+    - Tiếng Hàn cơ bản 2
+    - Tiếng Nhật cơ bản 2
+    - Kinh tế học đại cương
+    - Tác phong làm việc chuyên nghiệp
+    - Kỹ thuật số
+    - Phương pháp số trong lập trình
+    - Tiếng Anh Công nghệ thông tin cơ bản 3
+    - Lịch sử Đảng Cộng sản Việt Nam
+    - Toán rời rạc
+    - Cơ sở dữ liệu
+    - Kiến trúc máy tính
+    - Kỹ thuật lập trình
+    - Thiết kế Web
+    - Tiếng Trung cơ bản 3
+    - Tiếng Hàn cơ bản 3
+    - Tiếng Nhật cơ bản 3
+    - Aerobic 1
+    - Bóng chuyền 1
+    - Bơi 1
+    - Karate 1
+    - Khiêu vũ 1
+    - Pencak Silat 1
+    - Bóng rổ 1
+    - Cầu lông 1
+    - Tennis 1
+    - Tiếng Anh Công nghệ thông tin cơ bản 4
+    - Tư tưởng Hồ Chí Minh
+    - Cấu trúc dữ liệu và giải thuật
+    - Hệ quản trị cơ sở dữ liệu
+    - Lập trình hướng đối tượng
+    - Nguyên lý hệ điều hành
+    - Nhập môn Công nghệ phần mềm
+    - Thực tập cơ sở ngành
+    - Tiếng Trung cơ bản 4
+    - Tiếng Hàn cơ bản 4
+    - Tiếng Nhật cơ bản 4
+    - Aerobic 2
+    - Bóng chuyền 2
+    - Bơi 2
+    - Karate 2
+    - Khiêu vũ 2
+    - Pencak Silat 2
+    - Bóng rổ 2
+    - Cầu lông 2
+    - Tennis 2
+    - Tiếng Anh Công nghệ thông tin cơ bản 5
+    - Mạng máy tính
+    - Phân tích và đặc tả yêu cầu phần mềm
+    - Trí tuệ nhân tạo
+    - Lập trình .NET
+    - Tiếng Trung cơ bản 5
+    - Tiếng Hàn cơ bản 5
+    - Tiếng Nhật cơ bản 5
+    - Tối ưu hóa
+    - Xác suất thống kê
+    - Cơ sở lập trình nhúng
+    - Đồ họa máy tính
+    - Thiết kế giao diện người dùng
+    - An toàn và bảo mật thông tin
+    - Thiết kế phần mềm
+    - Kiểm thử phần mềm
+    - Lập trình Java
+    - Thực tâp chuyên ngành Kỹ thuật phần mềm
+    - Tiếng Anh Công nghệ thông tin
+    - Tiếng Nhật
+    - Tiếng Trung
+    - Tiếng Hàn
+    - Công cụ phát triển phần mềm
+    - Ứng dụng thuật toán
+    - Quản lý dự án công nghệ thông tin
+    - Đảm bảo chất lượng phần mềm
+    - Một số công nghệ phát triển phần mềm
+    - Công nghệ đa phương tiện
+    - Công nghệ thực tại ảo
+    - Lập trình Web bằng ASP.NET
+    - Lập trình Java nâng cao
+    - Lập trình web bằng PHP
+    - Phát triển ứng dụng trên thiết bị di động
+    - Phát triển ứng dụng Game
+    - Phần mềm mã nguồn mở
+    - Tích hợp hệ thống phần mềm
+    - Đồ án tốt nghiệp
+    - Thực tập doanh nghiệp

@@ -37,22 +37,25 @@ intents:
     use_entities: true
 - Guide_point_list:
     use_entities: true
+- Calculate_Score:
+    use_entities: true
+- Course_Information:
+    use_entities: true
+- C_Score:
+    use_entities: []
+- Subject_Suport:
+    use_entities: true
 entities:
-- cust_name
 - student_id
 - timeStart
 - timeEnd
-slots:
-  cust_name:
-    type: rasa.shared.core.slots.TextSlot
-    initial_value: null
-    auto_fill: true
-    influence_conversation: true
+- subject_name
+slots: {}
 responses:
   utter_name:
   - text: Tên mình là chatbot Rasa rất vui gặp bạn !
-  utter_greet_with_name:
-  - text: Kính chào {cust_name}. Tôi có thể giúp gì được cho {cust_name} ạ?
+  utter_greet:
+  - text: Xin chào. Tôi có thể giúp gì được cho Bạn ạ?
   utter_cheer_up:
   - image: https://i.imgur.com/nGF1K8f.jpg
     text: Cố lên nha :) !!!
@@ -76,19 +79,20 @@ responses:
   utter_unhappy:
   - text: Mọi Chuyện buồn sẽ qua thôi !
   - text: 'Cố  Gắng lên '
-  utter_greet:
-  - text: Xin Chào! Bạn có thể vui lòng cho biết tên để tiện xưng hô được không ah?
   utter_Guide_point_list:
   - text: 'Để Điểm danh bạn Vui Lòng cho chúng tôi biết Mã Sinh Viên. Vidu: Mã Sinh Viên : 2019403784 .'
   utter_Time_point_list:
-  - text: 'Để Điểm danh bạn Vui Lòng cài đặt Thời gian điểm danh. Vidu: 3:01 -  3:45  (Giờ:Phút) '
+  - text: 'Để Điểm danh bạn Vui Lòng cài đặt Thời gian điểm danh.  Vidu: 3:01 -  3:45  (Giờ:Phút) '
   utter_cancel_time:
   - text: '- Bạn có chắc chắn muôn huỷ thời gian điểm danh ?'
   utter_deny_cancel_time:
   - text: '- Thời Gian Chưa được đặt lại!'
+  utter_C_Score:
+  - text: 'Xem Thông Tin Môn Học bằng Cú Pháp : Xem thông tin môn: (Tên Môn)'
+  utter_Calculate_Score:
+  - text: 'Cách tính điểm môn học: <br>  (+ Môn tự luận : 4 điểm trên lớp + 6 điểm thi  )<br>  ( + Môn thi Thực Hành : 3 điểm trên lớp + 7 điểm thi)  <br> (+ Môn thi bài tập lớn : 5 điểm trên lớp + 5 điểm thi) '
 actions:
 - utter_name
-- utter_greet_with_name
 - utter_cheer_up
 - utter_did_that_help
 - utter_happy
@@ -105,5 +109,9 @@ actions:
 - action_cancel_time
 - action_Get_Time_point_List
 - action_Point_List
+- utter_Calculate_Score
+- action_Course_Information
+- utter_C_Score
+- action_Subject_Suport
 forms: {}
 e2e_actions: []

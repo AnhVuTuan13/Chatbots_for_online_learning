@@ -133,7 +133,7 @@ class Point_List(Action):
                 dispatcher.utter_message(text="Đã quá thời gian điểm danh!!")
             else:
                 # opent file xlsx - convert 'Ma So SV' to String
-                data = pd.read_excel(r"\DataSave\FileDiemDanh.xlsx", converters={'Mã số SV': str})
+                data = pd.read_excel(r"DataSave\FileDiemDanh.xlsx", converters={'Mã số SV': str})
                 # set col[Ma So SV ] to index
                 data = data.set_index('Mã số SV')
                 # get date now to add col
@@ -145,14 +145,67 @@ class Point_List(Action):
                 try:
                     student_id = tracker.latest_message['entities'][0]['value']
                 except:
-                    dispatcher.utter_message("Không Xác định được Mã Sinh Viên")
+                    dispatcher.utter_message(text="Không Xác định được Mã Sinh Viên")
                     return []
                 if student_id in data.index:
                     data.loc[student_id, date_now] = "x"
-                    text_urter = data.loc[student_id]['Họ và tên đệm'] + " " + data.loc[student_id]['Tên']
-                    data.to_excel(r"\DataSave\FileDiemDanh.xlsx")
-                    dispatcher.utter_message(
-                        "Sinh Viên :" + text_urter + " - " + student_id + ". Đã Điểm Danh Thành Công")
+                    text_Name = data.loc[student_id]['Họ và tên đệm'] + " " + data.loc[student_id]['Tên']
+                    data.to_excel(r"DataSave\FileDiemDanh.xlsx")
+                    dispatcher.utter_message(text=
+                        "Sinh Viên :" + text_Name + " - " + student_id + ". Đã Điểm Danh Thành Công")
                 else:
-                    dispatcher.utter_message("Sinh viên không có trong danh sách")
+                    dispatcher.utter_message(text="Sinh viên không có trong danh sách")
         return []
+
+class Course_Information(Action):
+
+    def name(self) -> Text:
+        return "action_Course_Information"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        try:
+            Sub_name = tracker.latest_message['entities'][0]['value'].upper()
+            print(Sub_name)
+        except:
+            dispatcher.utter_message(text="Không Xác định được Tên Môn Học ")
+            return []
+        data = pd.read_excel(r"DataSave\DsMonHoc.xlsx")
+        data = data.applymap(str)
+        data = data.set_index('Tên học phần')
+        if Sub_name in data.index:
+            print(data.loc[Sub_name])
+            text_urter ="Mã Học Phần:" +data.loc[Sub_name]['Mã học phần'] + " \n Tên Môn Học :" +data.loc[Sub_name]['Học phần']
+            text_urter2="Số Tín Chỉ :"+data.loc[Sub_name]['Số tín chỉ'] +"\nSố Tín Chỉ Lý thuyết:"+data.loc[Sub_name]['Số tín chỉ  lý thuyết']+"\nSố Tín Chỉ Thực Hành:"+data.loc[Sub_name]['Số tín chỉ thực hành']+ "\n Hình Thức Thi:"+data.loc[Sub_name]['Hinh Thức Thi']
+            dispatcher.utter_message(text=text_urter +"\n" +text_urter2)
+        else:
+            dispatcher.utter_message(text="Không Tìm Thấy Học Phần")
+        return []
+
+
+class Subject_Suport(Action):
+
+    def name(self) -> Text:
+        return "action_Subject_Suport"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        try:
+            Sub_name = tracker.latest_message['entities'][0]['value'].upper()
+            print(Sub_name)
+        except:
+            dispatcher.utter_message(text="Không Xác định được Tên Môn Học ")
+            return []
+        data = pd.read_excel(r"DataSave\DsMonHoc.xlsx")
+        data = data.applymap(str)
+        data = data.set_index('Tên học phần')
+        if Sub_name in data.index:
+            print(data.loc[Sub_name])
+            text_urter ="Bạn Có thể học tiếp một số môn: "+data.loc[Sub_name]['Học phần tiếp theo']
+            dispatcher.utter_message(text=text_urter )
+        else:
+            dispatcher.utter_message(text="Không Tìm Thấy Học Phần")
+        return []
+
