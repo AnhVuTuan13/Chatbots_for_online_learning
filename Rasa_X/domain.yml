@@ -53,7 +53,7 @@ entities:
 slots: {}
 responses:
   utter_name:
-  - text: Tên mình là chatbot Rasa rất vui gặp bạn !
+  - text: Mình là chatbot hỗ trợ học online rất vui gặp bạn !
   utter_greet:
   - text: Xin chào. Tôi có thể giúp gì được cho Bạn ạ?
   utter_cheer_up:
@@ -89,8 +89,6 @@ responses:
   - text: '- Thời Gian Chưa được đặt lại!'
   utter_C_Score:
   - text: 'Xem Thông Tin Môn Học bằng Cú Pháp : Xem thông tin môn: (Tên Môn)'
-  utter_Calculate_Score:
-  - text: 'Cách tính điểm môn học: <br>  (+ Môn tự luận : 4 điểm trên lớp + 6 điểm thi  )<br>  ( + Môn thi Thực Hành : 3 điểm trên lớp + 7 điểm thi)  <br> (+ Môn thi bài tập lớn : 5 điểm trên lớp + 5 điểm thi) '
 actions:
 - utter_name
 - utter_cheer_up
@@ -109,7 +107,7 @@ actions:
 - action_cancel_time
 - action_Get_Time_point_List
 - action_Point_List
-- utter_Calculate_Score
+- action_Calculate_Score
 - action_Course_Information
 - utter_C_Score
 - action_Subject_Suport

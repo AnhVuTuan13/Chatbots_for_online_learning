@@ -83,7 +83,13 @@ stories:
     - intent: greet
     - action: utter_greet
     - intent: Calculate_Score
-    - action: utter_Calculate_Score
+    - action: action_Calculate_Score
+
+
+- story: TinhDiemMon
+  steps:
+    - intent: Calculate_Score
+    - action: action_Calculate_Score
 
 - story: Chaohoi_ThongTinMonHoc
   steps:

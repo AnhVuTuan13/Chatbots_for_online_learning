@@ -88,18 +88,18 @@ class Get_Time_point_List(Action):
                 set_timeEnd = time(int(timeEnd.split(':')[0]), int(timeEnd.split(':')[1]))
                 print(set_timeEnd)
             except:
-                dispatcher.utter_message(text="Không Nhận được thời gian bắt đầu và kết thúc! ")
-                dispatcher.utter_message(text="Vui Lòng Nhập đúng cú pháp để tránh lỗi! ")
+                text_urter="Không Nhận được thời gian bắt đầu và kết thúc! \n Vui Lòng Nhập đúng cú pháp để tránh lỗi! "
+                dispatcher.utter_message(text=text_urter)
                 return []
             if(set_timeStart >= set_timeEnd):
                 timeStart=""
                 timeEnd=""
-                dispatcher.utter_message(text="Không được để Thời gian bắt đầu Lớn hơn hoặc bằng thời gian kết thúc !!")
-                dispatcher.utter_message(text="Vui Lòng Đặt lại Thời Gian !!!")
-                dispatcher.utter_message(responses ="utter_Time_point_list")
+                text_urter="Không được để Thời gian bắt đầu Lớn hơn hoặc bằng thời gian kết thúc !! \n Vui Lòng Đặt lại Thời Gian !!!"
+                dispatcher.utter_message(text=text_urter)
+
             else:
-                dispatcher.utter_message(text="Bạn Đã Đặt Thời gian thành công!")
-                dispatcher.utter_message(text="Start:" +timeStart+" - End: "+timeEnd)
+                text_urter="Bạn Đã Đặt Thời gian thành công!\n Start:" +timeStart+" - End: "+timeEnd
+                dispatcher.utter_message(text=text_urter)
 
         return []
 
@@ -120,15 +120,15 @@ class Point_List(Action):
         print(set_timeEnd)
         if (timeStart == "") & (timeEnd == ""):
             dispatcher.utter_message(text="Thời Gian Điểm danh chưa được dài đặt !")
-            dispatcher.utter_message(responses="utter_Time_point_list")
         else:
             time_now=datetime.now().strftime("%H:%M")
             print(time_now)
             set_time_now = time(int(time_now.split(':')[0]), int(time_now.split(':')[1]))
             print(set_time_now)
             if(set_time_now < set_timeStart):
-                dispatcher.utter_message(text="Chưa đến thời gian diểm danh!")
-                dispatcher.utter_message(text="Thơi gian điểm danh là: Start:" + timeStart + " - End: " + timeEnd)
+                text_urter="Chưa đến thời gian diểm danh! \n Thơi gian điểm danh là: Start:  " + timeStart + " - End: " + timeEnd
+                dispatcher.utter_message(text=text_urter)
+
             elif (set_time_now > set_timeEnd):
                 dispatcher.utter_message(text="Đã quá thời gian điểm danh!!")
             else:
@@ -154,7 +154,7 @@ class Point_List(Action):
                     dispatcher.utter_message(text=
                         "Sinh Viên :" + text_Name + " - " + student_id + ". Đã Điểm Danh Thành Công")
                 else:
-                    dispatcher.utter_message(text="Sinh viên không có trong danh sách")
+                    dispatcher.utter_message(text="Sinh viên có mã :"+ student_id +" không có trong danh sách")
         return []
 
 class Course_Information(Action):
@@ -209,3 +209,15 @@ class Subject_Suport(Action):
             dispatcher.utter_message(text="Không Tìm Thấy Học Phần")
         return []
 
+class Calculate_Score(Action):
+
+    def name(self) -> Text:
+        return "action_Calculate_Score"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        text_urter= "Cách tính điểm môn học: \n + Môn tự luận : 4 điểm trên lớp + 6 điểm thi   \n + Môn thi Thực Hành : 3 điểm trên lớp + 7 điểm thi \n + Môn thi bài tập lớn : 5 điểm trên lớp + 5 điểm thi) "
+        dispatcher.utter_message(text=text_urter)
+
+        return []
